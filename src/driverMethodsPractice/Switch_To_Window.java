@@ -1,12 +1,12 @@
 package driverMethodsPractice;
 import org.openqa.selenium.By;
-import org.openqa.selenium.opera.OperaDriver;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.edge.EdgeDriver;
 public class Switch_To_Window {
 	public static void main(String[] args) throws InterruptedException {
-		System.setProperty("webdriver.opera.driver", "C:\\Users\\Aarya\\eclipse-workspace"
-				+ "\\Automation\\Drivers\\operadriver.exe");
-		// instance of opera browser
-		OperaDriver driver = new OperaDriver();
+		System.setProperty("webdriver.edge.driver", System.getProperty("user.dir")+"//Driver//msedgedriver.exe");
+		WebDriver driver = new EdgeDriver();
+		driver.manage().window().maximize();      // maximize window
 		driver.manage().window().maximize();
 		// open goole search website
 		 driver.get("https://www.hyrtutorials.com/p/window-handles-practice.html");

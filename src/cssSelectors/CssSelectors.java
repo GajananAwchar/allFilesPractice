@@ -3,13 +3,15 @@ package cssSelectors;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.edge.EdgeDriver;
 
 
 public class CssSelectors {
 
 	public static void main(String[] args) throws InterruptedException {
-		WebDriver driver = new ChromeDriver();
-		driver.manage().window().maximize();
+		System.setProperty("webdriver.edge.driver", System.getProperty("user.dir")+"//Driver//msedgedriver.exe");
+		WebDriver driver = new EdgeDriver();
+		driver.manage().window().maximize();      // maximize window		driver.manage().window().maximize();
 		driver.get("https://www.hyrtutorials.com/p/css-selectors-practice.html");
 		driver.findElement(By.cssSelector("#firstName")).sendKeys("Gajanan");
 		driver.findElement(By.cssSelector("#lastName")).sendKeys("Awchar");

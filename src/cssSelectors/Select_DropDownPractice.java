@@ -6,13 +6,15 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.support.ui.Select;
 
 public class Select_DropDownPractice {
 
 	public static void main(String[] args) throws InterruptedException {
-		WebDriver driver = new ChromeDriver();
-		driver.manage().window().maximize();
+		System.setProperty("webdriver.edge.driver", System.getProperty("user.dir")+"//Driver//msedgedriver.exe");
+		WebDriver driver = new EdgeDriver();
+		driver.manage().window().maximize();      // maximize window
 		Thread.sleep(4000);
 		driver.get("https://www.facebook.com/");
 		driver.manage().deleteAllCookies();

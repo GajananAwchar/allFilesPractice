@@ -11,7 +11,9 @@ public class School {   // MultiLevel Inheritance
 		name.standard1();
 		name.Student2();
 		name.Medium2();
-		name.standard2();  }}
+		name.standard2(); 
+		name.school1();
+		name.school2();}}
 class LanguageMedium extends School {
 	void Medium1 (){	
 		System.out.println("My Medium is MarathiMedium");	}	

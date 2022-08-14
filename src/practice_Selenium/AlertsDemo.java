@@ -17,7 +17,7 @@ public class AlertsDemo {
 		//alert type : alert box
 		Actions act1 =new Actions(driver);
 		WebElement clickButton1 = driver.findElement(By.xpath("//button[@id='alertBox']"));
-		act1.click(clickButton1).build().perform();
+		act1.moveToElement(clickButton1).click().build().perform();
 		Alert alert1 = driver.switchTo().alert();
 		String  string1 = alert1.getText();
 		System.out.println("The alert1 is: " +string1);

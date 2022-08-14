@@ -8,23 +8,22 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.edge.EdgeDriver;
 
 public class Broken_Links {
-
 	public static void main(String[] args) {
-		System.setProperty("webdriver.chrome.driver","C:\\Users\\Aarya\\eclipse\\Eclipse Ide 2021 22\\firstProject\\drivers\\chromedriver.exe");
-		WebDriver driver = new ChromeDriver();
+		System.setProperty("webdriver.edge.driver", System.getProperty("user.dir")+"//Driver//msedgedriver.exe");
+		WebDriver driver = new EdgeDriver();
+		driver.manage().window().maximize();      // maximize window
 		driver.get("https://www.google.co.in/");
 	List <WebElement> allLinks	=driver.findElements(By.tagName("a"));
 	System.out.println("all links are"+allLinks.size());
-	for (int i=0; i<=allLinks.size();i++) {
+	for (int i=0; i<allLinks.size();i++) {
 	WebElement linkEle=	allLinks.get(i);
 	String url= linkEle.getAttribute("href");
 		System.out.println(url);
 		verifyLinkActive(url);}
 	}
-
-
 	public static void verifyLinkActive(String linkUrl) {
 		try {
 			URL url = new URL(linkUrl);

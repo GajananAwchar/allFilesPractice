@@ -1,24 +1,28 @@
 package exception_Handling;
 
-public class ArithmeticException_Example {
+import java.io.File;
 
-	public static void main(String[] args) {
-		System.out.println("Start");
-		System.out.println("1");
-		System.out.println("2");
-		System.out.println("3");
-		//System.out.println(50/0);
-		try {
-			System.out.println(50/0);	
+public class ArithmeticException_Example {
+	public void useexp() throws InterruptedException {
+		Thread.sleep(10);
+		
+		File obj= new File("sdd/ddd/p.docx");
+		System.out.println("start");
+		System.out.println(120/2);
+		try{
+			System.out.println(120/0);
+
 		}
-		catch (Exception e){	
-			System.out.println("java.lang.ArithmeticException: / by zero");
+		catch(Exception e) {
+			
+			System.out.println("the stack trace is "+ e.getClass());
 		}
-		System.out.println("4");
-		System.out.println("5");
-		System.out.println("6");
-		System.out.println("7");
-		System.out.println("End");
+		System.out.println("end ");
+
+	}
+	public static void main(String[] args) throws Exception {
+		ArithmeticException_Example obj= new ArithmeticException_Example();
+		obj.useexp();
 	}
 
 }

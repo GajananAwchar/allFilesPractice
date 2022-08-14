@@ -4,11 +4,12 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.opera.OperaDriver;
 public class CSS_SelectorPractice {
 	public static void main(String[] args) throws InterruptedException  {
-		//WebDriver driver = new ChromeDriver();
-		WebDriver driver = new OperaDriver();
+				System.setProperty("webdriver.edge.driver", System.getProperty("user.dir")+"//Driver//msedgedriver.exe");
+		WebDriver driver = new EdgeDriver();
 		driver.manage().window().maximize();      // maximize window
 		driver.get("https://www.hyrtutorials.com/p/css-selectors-practice.html");
 		Thread.sleep(4000);

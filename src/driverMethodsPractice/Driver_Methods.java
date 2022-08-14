@@ -1,18 +1,20 @@
 package driverMethodsPractice;
 
+import java.time.Duration;
 import java.util.concurrent.TimeUnit;
 
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.edge.EdgeDriver;
 
 public class Driver_Methods {
 
 	public static void main(String[] args) throws InterruptedException {
-		System.setProperty("webdriver.edge.driver", "C:\\Users\\Aarya\\eclipse-workspace"
-				+ "\\Automation\\Drivers\\msedgedriver.exe");
-		EdgeDriver driver = new EdgeDriver();
+		System.setProperty("webdriver.edge.driver", System.getProperty("user.dir")+"//Driver//msedgedriver.exe");
+		WebDriver driver = new EdgeDriver();
+		driver.manage().window().maximize();      // maximize window
 		driver.manage().window().maximize();
 		driver.get("https://www.google.co.in/");
-		driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 		String titleGoogle = driver.getTitle();
 		
 		String currentUrl = driver.getCurrentUrl();

@@ -4,6 +4,8 @@ import java.util.Iterator;
 
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.Keys;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.Select;
@@ -12,11 +14,9 @@ public class Launch_IE_Broswer {
 
 	public static void main(String[] args) throws InterruptedException {
 		
-		
-		
-		System.setProperty("webdriver.InternetExplorerDriver.driver", "C:\\Users\\Aarya\\eclipse-workspace"
-				+ "\\Automation\\Drivers\\IEDDriverServer.exe");
-		
+		System.setProperty("webdriver.edge.driver", System.getProperty("user.dir")+"//Driver//msedgedriver.exe");
+		WebDriver driver = new EdgeDriver();
+		driver.manage().window().maximize();      // maximize window		
 		
         InternetExplorerDriver driver2 = new InternetExplorerDriver();
         driver2.manage().window().maximize();

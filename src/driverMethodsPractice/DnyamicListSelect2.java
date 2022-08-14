@@ -4,16 +4,17 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.opera.OperaDriver;
 
 public class DnyamicListSelect2 {
 
 	public static void main(String[] args) throws InterruptedException {
-		System.setProperty("webdriver.opera.driver", "C:\\Users\\Aarya\\eclipse-workspace"
-				+ "\\Automation\\Drivers\\operadriver.exe");
-		// instance of opera browser
-		OperaDriver driver = new OperaDriver();
+		System.setProperty("webdriver.edge.driver", System.getProperty("user.dir")+"//Driver//msedgedriver.exe");
+		WebDriver driver = new EdgeDriver();
+		driver.manage().window().maximize();      // maximize window
 			driver.manage().window().maximize();
 		driver.get("http://demo.automationtesting.in/Register.html");
 		// select countries on above page

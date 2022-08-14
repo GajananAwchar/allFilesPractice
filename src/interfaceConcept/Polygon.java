@@ -2,11 +2,13 @@ package interfaceConcept;
 
 //interface 1
 interface Polygon1{
+	void sideLength(int length);
 	void areaOfPolygon(int a, int b);
 }
 //interface 2
 interface Polygon2{
-	 void noOfSidesOfPolygon(int noOfSides);
+	void sideLength(int length); 
+	void noOfSidesOfPolygon(int noOfSides);
 }
 //interface 3
 interface Polygon3{
