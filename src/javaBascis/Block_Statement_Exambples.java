@@ -10,6 +10,7 @@ public class Block_Statement_Exambples {
 		else //{ // begin block 2
 			System.out.println("Condition is false");
 		System.out.println("This is end of Statement");
+		System.out.println("Condition is false");
 		//} // end block 2
 	}
 
